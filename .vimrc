@@ -7,7 +7,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle (required)
 Plugin 'VundleVim/Vundle.vim'
-"call vundle#config#require(g:bundles)
 " add plugins here
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
