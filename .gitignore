@@ -1,0 +1,19 @@
+# top level file exclusions
+*
+!.bash_aliases
+!.bash_logout
+!.bashrc
+!.gitignore
+!.tmux.conf 
+!.vimrc
+
+# files in .ssh/
+!.ssh/
+.ssh/*
+!.ssh/config
+
+# files in .vim/colors/
+!.vim/
+!.vim/colors/
+.vim/colors/*
+!.vim/colors/lawndoc.vim
