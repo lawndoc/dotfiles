@@ -88,7 +88,7 @@ git_info() {
     fi
 
     if [[ $git_status =~ $branch_is_ahead ]]; then
-      msg+="|${color_red}\u2191${color_reset}"
+      msg+="|${color_yellow}\u2191${color_reset}"
     fi
 
     msg+="${color_green})"
