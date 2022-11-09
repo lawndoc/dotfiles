@@ -194,3 +194,10 @@ fi
 
 # Change editor to Vim
 export EDITOR=vim
+
+# WSL2 KeePassXC ssh-agent sync
+uname -r | grep WSL2 > /dev/null
+if [ $? == 0 ]; then
+  ${HOME}/.local/bin/wsl-ssh-agent-sync start
+  export SSH_AUTH_SOCK=${HOME}/.ssh/wsl-ssh-agent.sock
+fi

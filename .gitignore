@@ -7,12 +7,19 @@
 !.tmux.conf 
 !.vimrc
 
-# files in .config
+# files in .config/nvim/
 !.config/
 ./config/*
 !.config/nvim/
 ./config/nvim/*
 !.config/nvim/init.vim
+
+# files in .local/bin/
+!.local/
+./local/*
+!.local/bin/
+./local/bin/*
+!.local/bin/wsl-ssh-agent-sync
 
 # files in .ssh/
 !.ssh/
@@ -25,3 +32,10 @@
 !.vim/colors/
 .vim/colors/*
 !.vim/colors/lawndoc.vim
+
+# files in .wsl/bin/
+!.wsl/
+.wsl/*
+!.wsl/bin/
+.wsl/bin/*
+!.wsl/bin/npiperelay.exe
