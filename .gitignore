@@ -20,6 +20,7 @@
 !.local/bin/
 ./local/bin/*
 !.local/bin/wsl-ssh-agent-sync
+!.local/bin/lvm-fill
 
 # files in .ssh/
 !.ssh/
