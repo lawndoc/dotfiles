@@ -7,6 +7,13 @@
 !.tmux.conf 
 !.vimrc
 
+# files in .config
+!.config/
+./config/*
+!.config/nvim/
+./config/nvim/*
+!.config/nvim/init.vim
+
 # files in .ssh/
 !.ssh/
 .ssh/*
