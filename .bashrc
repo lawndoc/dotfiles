@@ -60,7 +60,7 @@ color_red="\033[0;31m"
 color_yellow="\033[0;33m"
 color_green="\033[0;32m"
 color_ochre="\033[38;5;95m"
-color_blue="\033[0;34m"
+color_blue="\033[0;36m"
 color_white="\033[0;37m"
 color_reset="\033[0m"
 
@@ -81,14 +81,14 @@ git_info() {
 
     if [[ $git_status =~ $on_branch ]]; then
       local branch=${BASH_REMATCH[1]}
-      msg+="${color_red}${branch}${color_reset}"
+      msg+="${color_yellow}${branch}${color_reset}"
     elif [[ $git_status =~ $on_commit ]]; then
       local commit=${BASH_REMATCH[1]}
-      msg+="${color_red}${commit}${color_reset}"
+      msg+="${color_yellow}${commit}${color_reset}"
     fi
 
     if [[ $git_status =~ $branch_is_ahead ]]; then
-      msg+="|${color_yellow}\u2191${color_reset}"
+      msg+="|${color_red}\u2191${color_reset}"
     fi
 
     msg+="${color_green})"
@@ -123,10 +123,10 @@ if [ "$color_prompt" = yes ]; then
   if [ "$EUID" == 0 ]; then
     PS1="\[${color_green}\]┌──(\[${color_red}\]\u\[${color_reset}\]"
   else
-    PS1="\[${color_green}\]┌──(\[${color_yellow}\]\u\[${color_reset}\]"
+    PS1="\[${color_green}\]┌──(\[${color_blue}\]\u\[${color_reset}\]"
   fi
   # @ host
-  PS1+="@\[${color_yellow}\]\h\[${color_green}\])"
+  PS1+="@\[${color_blue}\]\h\[${color_green}\])"
   # Current working directory
   PS1+="-[\[${color_reset}\]\w\[${color_green}\]]"
   # (git_branch)
@@ -137,7 +137,7 @@ if [ "$color_prompt" = yes ]; then
   if [ "$EUID" == 0 ]; then
     PS1+="\[${color_red}\]# \[${color_reset}\]"
   else
-    PS1+="\$ "
+    PS1+="\[${color_blue}\]\$ \[${color_reset}\]"
   fi
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
