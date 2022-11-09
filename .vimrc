@@ -1,26 +1,6 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle (required)
-Plugin 'VundleVim/Vundle.vim'
-" add plugins here
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-fugitive'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'tmsvg/pear-tree'
-
-call vundle#end()           "required for Vundle
-filetype plugin indent on   "required for Vundle
-
 " OTHER SETTINGS
 set splitbelow
 set splitright
