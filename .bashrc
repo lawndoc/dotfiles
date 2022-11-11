@@ -196,6 +196,7 @@ fi
 export EDITOR=vim
 
 # WSL2 KeePassXC ssh-agent sync
+# requires socat and OpenSSH-Win32 >= 8.9.1.0
 uname -r | grep WSL2 > /dev/null
 if [ $? == 0 ]; then
   ${HOME}/.local/bin/wsl-ssh-agent-sync start
