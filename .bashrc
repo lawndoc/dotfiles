@@ -135,7 +135,7 @@ if [ "$color_prompt" = yes ]; then
   PS1+="\n\[${color_green}\]└─\[${color_reset}\]"
   # '#' for root otherwise '$'
   if [ "$EUID" == 0 ]; then
-    PS1+="\[${color_red}\]# \[${color_reset}\]"
+    PS1+="\[${color_red}\]\# \[${color_reset}\]"
   else
     PS1+="\[${color_blue}\]\$ \[${color_reset}\]"
   fi
