@@ -9,7 +9,7 @@
 # to wsl-ssh-agent-relay.
 
 # For debugging startup problems uncomment next line
-exec 2> >(tee -a -i "$HOME/error.log")
+#exec 2> >(tee -a -i "$HOME/error.log")
 
 #### Assuming ~/winhome links to %USERPROFILE on Windows side
 RELAY_BIN="${HOME}/.wsl/bin/npiperelay.exe"
