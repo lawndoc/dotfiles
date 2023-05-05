@@ -1,0 +1,49 @@
+# top level file exclusions
+*
+!.bash_aliases
+!.bash_logout
+!.bashrc
+!.gitignore
+!.tmux.conf 
+!.vimrc
+
+# files in .config/nvim/
+!.config/
+./config/*
+!.config/nvim/
+./config/nvim/*
+!.config/nvim/init.lua
+!.config/nvim/init.vim
+!.config/nvim/lua/
+!.config/nvim/lua/**
+!.config/nvim/NvChad_LICENSE
+
+# files in .local/bin/
+!.local/
+./local/*
+!.local/bin/
+./local/bin/*
+!.local/bin/wsl-ssh-agent-sync
+!.local/bin/lvm-fill
+
+# files in .tmux/
+!.tmux/
+.tmux/*
+!.tmux/plugins/
+.tmux/plugins/*
+!.tmux/plugins/tpm/
+!.tmux/plugins/tpm/**
+
+# files in .vim/colors/
+!.vim/
+.vim/*
+!.vim/colors/
+.vim/colors/*
+!.vim/colors/lawndoc.vim
+
+# files in .wsl/bin/
+!.wsl/
+.wsl/*
+!.wsl/bin/
+.wsl/bin/*
+!.wsl/bin/npiperelay.exe
