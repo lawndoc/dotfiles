@@ -26,6 +26,11 @@
 !.local/bin/wsl-ssh-agent-sync
 !.local/bin/lvm-fill
 
+# files in .ssh/
+!.ssh/
+.ssh/*
+!.ssh/config
+
 # files in .tmux/
 !.tmux/
 .tmux/*
