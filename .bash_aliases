@@ -9,6 +9,12 @@ alias less="less -R"		# color output
 alias myip="curl ifconfig.me"
 alias open="xdg-open"
 
+# vim is nvim if available
+which nvim > /dev/null
+if [ $? ] ; then
+  alias vim="nvim"
+fi
+
 # Add an "alert" alias for long running commands.
 # usage: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
