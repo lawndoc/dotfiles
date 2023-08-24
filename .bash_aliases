@@ -18,6 +18,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias plz='sudo "$BASH" -c "$(history -p !!)"'
 alias please='sudo "$BASH" -c "$(history -p !!)"'
 
+# Python virtual env alias 
+alias activate='test -d venv && source ./venv/bin/activate || echo "No Virtualenv in the current folder"'
+alias mkenv='test -d venv && echo "Already exists" || virtualenv --no-site-packages venv; activate'
+
 # mkcd - make directory and immediately cd to it
 # usage: mkcd <new_directory>
 mkcd ()
