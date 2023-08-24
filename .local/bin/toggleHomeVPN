@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+INTERFACE="$(nmcli connection show | grep homelab | awk '{print $4}')"
+
+if [ "$INTERFACE" == "" ]; then
+	sudo wg-quick up homelab
+	sudo -u lawndoc DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send "VPN up" "Connected to homelab via WireGuard"
+else
+	sudo wg-quick down homelab
+	sudo -u lawndoc DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send "VPN down" "Disconnected from homelab WireGuard"
+fi

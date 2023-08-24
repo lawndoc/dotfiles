@@ -22,9 +22,12 @@
 !.local/
 ./local/*
 !.local/bin/
-./local/bin/*
-!.local/bin/wsl-ssh-agent-sync
-!.local/bin/lvm-fill
+!.local/bin/*
+
+# files in .ssh/
+!.ssh/
+.ssh/*
+!.ssh/config
 
 # files in .tmux/
 !.tmux/
