@@ -23,6 +23,8 @@
 ./local/*
 !.local/bin/
 !.local/bin/*
+# ignore this file
+.local/bin/exercism
 
 # files in .ssh/
 !.ssh/
