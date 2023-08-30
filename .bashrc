@@ -218,3 +218,6 @@ if [ -f ~/.nvm/nvm.sh ]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/.gems"
+export PATH="$HOME/.gems/bin:$PATH"
