@@ -7,17 +7,6 @@
 !.tmux.conf 
 !.vimrc
 
-# files in .config/nvim/
-!.config/
-./config/*
-!.config/nvim/
-./config/nvim/*
-!.config/nvim/init.lua
-!.config/nvim/init.vim
-!.config/nvim/lua/
-!.config/nvim/lua/**
-!.config/nvim/NvChad_LICENSE
-
 # files in .local/bin/
 !.local/
 ./local/*
