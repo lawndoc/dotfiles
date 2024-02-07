@@ -15,6 +15,9 @@ if [ $? ] ; then
   alias vim="nvim"
 fi
 
+# setup/update NvChad
+alias nvchad="(git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim) || (git pull ~/.config/nvim && nvim)"
+
 # Add an "alert" alias for long running commands.
 # usage: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
