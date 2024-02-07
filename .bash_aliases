@@ -8,15 +8,13 @@ alias ll="ls -alF"
 alias less="less -R"		# color output
 alias myip="curl ifconfig.me"
 alias open="xdg-open"
+alias ssa='eval `ssh-agent`'
 
 # vim is nvim if available
 which nvim > /dev/null
 if [ $? ] ; then
   alias vim="nvim"
 fi
-
-# setup/update NvChad
-alias nvchad="(git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim) || (git pull ~/.config/nvim && nvim)"
 
 # Add an "alert" alias for long running commands.
 # usage: sleep 10; alert
