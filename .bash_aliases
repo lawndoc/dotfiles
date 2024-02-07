@@ -29,7 +29,7 @@ alias please='sudo "$BASH" -c "$(history -p !!)"'
 
 # Python virtual env alias 
 alias activate='test -d venv && source ./venv/bin/activate || echo "No Virtualenv in the current folder"'
-alias mkenv='test -d venv && echo "Already exists" || virtualenv --no-site-packages venv; activate'
+alias mkenv='test -d venv && echo "Already exists" || python3 -m venv venv; activate'
 
 # mkcd - make directory and immediately cd to it
 # usage: mkcd <new_directory>
