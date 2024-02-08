@@ -1,7 +1,68 @@
 #!/usr/bin/env bash
 
+# Install neovim
 sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt update
-sudo apt install -y neovim
+sudo apt install -y neovim nodejs
+
+# Setup NvChad + GitHub Copilot
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/github/copilot.vim.git ~/.config/nvim/pack/github/start/copilot.vim
+mkdir -p ~/.config/nvim/lua/custom
+cat << EOF > ~/.config/nvim/lua/custom/chadrc.lua
+---@type ChadrcConfig
+local M = {}
+
+M.plugins = "custom.plugins"
+
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
+
+return M
+EOF
+cat << EOF > ~/.config/nvim/lua/custom/init.lua
+-- local autocmd = vim.api.nvim_create_autocmd
+
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })
+EOF
+cat << EOF > ~/.config/nvim/lua/custom/plugins.lua
+---@type NvPluginSpec[]
+local plugins = {
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- Mapping tab is already used by NvChad
+      vim.g.copilot_no_tab_map = true;
+      vim.g.copilot_assume_mapped = true;
+      vim.g.copilot_tab_fallback = "";
+      -- The mapping is set to other key, see custom/lua/mappings
+      -- or run <leader>ch to see copilot mapping section
+    end
+  }
+}
+return plugins
+EOF
+cat << EOF > ~/.config/nvim/lua/custom/mappings.lua
+--@type MappingsTable
+local M = {}
+M.copilot = {
+  i = {
+    ["<C-l>"] = {
+      function()
+        vim.fn.feedkeys(vim.fn['copilot#Accept'](), '')
+      end,
+      "Copilot Accept",
+      {replace_keycodes = true, nowait=true, silent=true, expr=true, noremap=true}
+    }
+  }
+}
+return M
+EOF
 
