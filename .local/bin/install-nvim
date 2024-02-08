@@ -16,6 +16,7 @@ cat << EOF > ~/.config/nvim/lua/custom/chadrc.lua
 local M = {}
 
 M.plugins = "custom.plugins"
+M.ui = {theme = "everblush"}
 
 -- check core.mappings for table structure
 M.mappings = require "custom.mappings"
