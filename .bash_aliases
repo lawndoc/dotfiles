@@ -8,6 +8,7 @@ alias ll="ls -alF"
 alias less="less -R"		# color output
 alias myip="curl ifconfig.me"
 alias open="xdg-open"
+alias ssa='eval `ssh-agent`'
 
 # vim is nvim if available
 which nvim > /dev/null
